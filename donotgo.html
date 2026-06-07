@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Poetry Quiz: Yeats, Thomas, & Collins</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #34495e;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --correct-color: #27ae60;
+            --incorrect-color: #c0392b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            background-color: #eec;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .question-card {
+            margin-top: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .question-card:last-child {
+            border-bottom: none;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a202c;
+        }
+
+        .poem-excerpt {
+            background-color: #f4f6f8;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            font-style: italic;
+            font-family: 'Georgia', serif;
+            white-space: pre-line;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .option-item {
+            margin-bottom: 10px;
+        }
+
+        .option-item label {
+            display: block;
+            padding: 12px 18px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-item label:hover {
+            background: #edf2f7;
+            border-color: #cbd5e1;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+
+        /* Result Styles */
+        .correct-answer {
+            background-color: #d4edda !important;
+            border-color: var(--correct-color) !important;
+            color: #155724 !important;
+            font-weight: 600;
+        }
+
+        .incorrect-answer {
+            background-color: #f8d7da !important;
+            border-color: var(--incorrect-color) !important;
+            color: #721c24 !important;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1a252f;
+        }
+
+        #result-dashboard {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>English Poetry Reading Quiz</h1>
+    
+    <form id="quiz-form">
+        <!-- SECTION 1: YEATS -->
+        <div class="section-title">Part I. William Butler Yeats — The Lake Isle of Innisfree</div>
+        
+        <!-- Q1 -->
+        <div class="question-card" data-q="1">
+            <div class="question-text">1. Read the following stanza. Which of the five senses does the imagery in the phrase "bee-loud glade" primarily appeal to?</div>
+            <div class="poem-excerpt">I will arise and go now, and go to Innisfree,
+            And a small cabin build there, of clay and wattles made:
+            Nine bean-rows will I have there, a hive for the honeybee,
+            And live alone in the bee-loud glade.</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q1" value="A"> Visual image (Sight)</label></li>
+                <li class="option-item"><label><input type="radio" name="q1" value="B"> Auditory image (Hearing)</label></li>
+                <li class="option-item"><label><input type="radio" name="q1" value="C"> Olfactory image (Smell)</label></li>
+                <li class="option-item"><label><input type="radio" name="q1" value="D"> Tactile image (Touch)</label></li>
+            </ul>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-card" data-q="2">
+            <div class="question-text">2. Read the following stanza. What does the metaphorical expression "the veils of the morning" refer to?</div>
+            <div class="poem-excerpt">And I shall have some peace there, for peace comes dropping slow,
+            Dropping from the veils of the morning to where the cricket sings;
+            There midnight's all a glimmer, and noon a purple glow,
+            And evening full of the linnet's wings.</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q2" value="A"> The morning mist or fog covering the island</label></li>
+                <li class="option-item"><label><input type="radio" name="q2" value="B"> The dark curtains inside the speaker's cabin</label></li>
+                <li class="option-item"><label><input type="radio" name="q2" value="C"> The clouds that bring heavy afternoon rain</label></li>
+                <li class="option-item"><label><input type="radio" name="q2" value="D"> The structural fabrics used to build the beehive</label></li>
+            </ul>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-card" data-q="3">
+            <div class="question-text">3. Read the following stanza. What reality about the speaker's current situation is explicitly revealed in the final two lines?</div>
+            <div class="poem-excerpt">I will arise and go now, for always night and day
+            I hear lake water lapping with low sounds by the shore;
+            While I stand on the roadway, or on the pavements gray,
+            I hear it in the deep heart's core.</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q3" value="A"> The speaker is already living peacefully on the island of Innisfree.</label></li>
+                <li class="option-item"><label><input type="radio" name="q3" value="B"> The speaker is physically trapped inside a gray prison cell.</label></li>
+                <li class="option-item"><label><input type="radio" name="q3" value="C"> The speaker is far away from nature, standing in an urban city environment.</label></li>
+                <li class="option-item"><label><input type="radio" name="q3" value="D"> The speaker has completely forgotten the low sounds of Sligo's lake water.</label></li>
+            </ul>
+        </div>
+
+
+        <!-- SECTION 2: DYLAN THOMAS -->
+        <div class="section-title">Part II. Dylan Thomas — Do Not Go Gentle into That Good Night</div>
+        
+        <!-- Q4 -->
+        <div class="question-card" data-q="4">
+            <div class="question-text">4. Read the following stanza. What does the expression "that good night" metaphorically represent?</div>
+            <div class="poem-excerpt">Do not go gentle into that good night,
+            Old age should burn and rave at close of day;
+            Rage, rage against the dying of the light.</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q4" value="A"> A peaceful evening walk in the countryside</label></li>
+                <li class="option-item"><label><input type="radio" name="q4" value="B"> The state of falling into a healthy sleep</label></li>
+                <li class="option-item"><label><input type="radio" name="q4" value="C"> The arrival of death or the end of life</label></li>
+                <li class="option-item"><label><input type="radio" name="q4" value="D"> A celebration party for an elderly man</label></li>
+            </ul>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-card" data-q="5">
+            <div class="question-text">5. Read the following stanza. In line 11, what does the pronoun "it" refer to in the phrase "they grieved it on its way"?</div>
+            <div class="poem-excerpt">Wild men who caught and sang the sun in flight,
+            And learn, too late, they grieved it on its way,
+            Do not go gentle into that good night.</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q5" value="A"> The flight of birds</label></li>
+                <li class="option-item"><label><input type="radio" name="q5" value="B"> The fading sun (representing passing time/life)</label></li>
+                <li class="option-item"><label><input type="radio" name="q5" value="C"> The good night</label></li>
+                <li class="option-item"><label><input type="radio" name="q5" value="D"> Their own wild songs</label></li>
+            </ul>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-card" data-q="6">
+            <div class="question-text">6. Read the following stanza. Which rhetorical device or figure of speech is primarily utilized in the juxtaposed expression "Curse, bless, me now"?</div>
+            <div class="poem-excerpt">And you, my father, there on the sad height,
+            Curse, bless, me now with your fierce tears, I pray.
+            Do not go gentle into that good night.
+            Rage, rage against the dying of the light.</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q6" value="A"> Simile</label></li>
+                <li class="option-item"><label><input type="radio" name="q6" value="B"> Oxymoron</label></li>
+                <li class="option-item"><label><input type="radio" name="q6" value="C"> Personification</label></li>
+                <li class="option-item"><label><input type="radio" name="q6" value="D"> Alliteration</label></li>
+            </ul>
+        </div>
+
+
+        <!-- SECTION 3: BILLY COLLINS -->
+        <div class="section-title">Part III. Billy Collins — Sonnet</div>
+        
+        <!-- Q7 -->
+        <div class="question-card" data-q="7">
+            <div class="question-text">7. In the opening line, "All we need is fourteen lines, well, thirteen now," why does the speaker say that only thirteen lines are needed now?</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q7" value="A"> Because a standard Italian sonnet is originally supposed to have exactly 13 lines.</label></li>
+                <li class="option-item"><label><input type="radio" name="q7" value="B"> Because he has just written the very first line of the 14-line sonnet structure.</label></li>
+                <li class="option-item"><label><input type="radio" name="q7" value="C"> Because he wants to break away from traditional poetic forms completely.</label></li>
+                <li class="option-item"><label><input type="radio" name="q7" value="D"> Because the final line of the poem will be written by Laura instead of him.</label></li>
+            </ul>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-card" data-q="8">
+            <div class="question-text">8. At the end of the poem, the speaker tells Petrarch to "take off those crazy medieval tights." What tone is conveyed through this specific expression?</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q8" value="A"> Solemn and highly respectful</label></li>
+                <li class="option-item"><label><input type="radio" name="q8" value="B"> Sarcastic and playful/ironic</label></li>
+                <li class="option-item"><label><input type="radio" name="q8" value="C"> Depressed and melancholic</label></li>
+                <li class="option-item"><label><input type="radio" name="q8" value="D"> Aggressive and fiercely angry</label></li>
+            </ul>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-card" data-q="9">
+            <div class="question-text">9. In the third line, "to launch a little ship on love's storm-tossed seas," what does the "little ship" metaphorically represent within the context of the poem?</div>
+            <ul class="options-list">
+                <li class="option-item"><label><input type="radio" name="q9" value="A"> The sonnet poem that the poet is currently crafting</label></li>
+                <li class="option-item"><label><input type="radio" name="q9" value="B"> An actual wooden vessel sailing across the Mediterranean Sea</label></li>
+                <li class="option-item"><label><input type="radio" name="q9" value="C"> The physical body of the speaker's beloved mistress Laura</label></li>
+                <li class="option-item"><label><input type="radio" name="q9" value="D"> A historical journey undertaken by medieval European sailors</label></li>
+            </ul>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="checkQuiz()">Submit Quiz</button>
+    </form>
+    
+    <div id="result-dashboard"></div>
+</div>
+
+<script>
+    const answerKey = {
+        q1: 'B',
+        q2: 'A',
+        q3: 'C',
+        q4: 'C',
+        q5: 'B',
+        q6: 'B',
+        q7: 'B',
+        q8: 'B',
+        q9: 'A'
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answerKey).length;
+        
+        // Reset styles
+        const allLabels = document.querySelectorAll('.option-item label');
+        allLabels.forEach(label => {
+            label.classList.remove('correct-answer', 'incorrect-answer');
+        });
+
+        for (let key in answerKey) {
+            const selectedOpt = document.querySelector(`input[name="${key}"]:checked`);
+            const qCard = document.querySelector(`.question-card[data-q="${key.replace('q','')}"]`);
+            
+            // Find the correct option radio button to highlight later
+            const correctRadio = document.querySelector(`input[name="${key}"][value="${answerKey[key]}"]`);
+            
+            if (selectedOpt) {
+                if (selectedOpt.value === answerKey[key]) {
+                    score++;
+                    selectedOpt.parentElement.classList.add('correct-answer');
+                } else {
+                    selectedOpt.parentElement.classList.add('incorrect-answer');
+                    correctRadio.parentElement.classList.add('correct-answer');
+                }
+            } else {
+                // If skipped, just highlight the correct answer
+                correctRadio.parentElement.classList.add('correct-answer');
+            }
+        }
+
+        // Display summary
+        const dashboard = document.getElementById('result-dashboard');
+        dashboard.style.display = 'block';
+        dashboard.innerHTML = `총 ${totalQuestions}개 중 ${score}개 맞추었습니다. (Score: ${score} / ${totalQuestions})`;
+        
+        // Scroll to top or result dashboard
+        dashboard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
